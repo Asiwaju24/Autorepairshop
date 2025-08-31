@@ -1,81 +1,106 @@
-import React from "react";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { Home, Info, Calendar, Mail, Hammer, Menu, X } from "lucide-react";
 import Logo from "../assets/logo.jpg";
+import React, { useState } from "react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur bg-white/90 shadow-md font-bold">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-xl text-black font-bold">
-          <img src={Logo} alt="Logo" className="h-8 w-8 rounded-full object-cover" />
-          AR AUTOMOTIVE TECHNOLOGY
-        </Link>
+    <nav className="sticky top-0 z-50 backdrop-blur text-balance p-4 shadow-lg">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center">
+          {/* Logo/Brand */}
+          <div className="text-2xl font-bold flex items-center gap-2">
+            <h1>AR Auto</h1>
+          </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-black">
-          <li>
-            <HashLink smooth to="#home" className="hover:text-blue-600">
-              Home
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="#about" className="hover:text-blue-600">
-              About
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="#service" className="hover:text-blue-600">
-              Services
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="#contact" className="hover:text-blue-600">
-              Contact
-            </HashLink>
-          </li>
-        </ul>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6 font-medium">
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/" onClick={closeMenu}>
+              <Home size={18} /> Home
+            </Link>
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/about" onClick={closeMenu}>
+              <Info size={18} /> About
+            </Link>
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/services" onClick={closeMenu}>
+              <Hammer size={18} /> Services
+            </Link>
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/booking" onClick={closeMenu}>
+              <Calendar size={18} /> Booking
+            </Link>
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/contact" onClick={closeMenu}>
+              <Mail size={18} /> Contact
+            </Link>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} className="md:hidden focus:outline-none">
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-gray-900 text-white px-4 py-6 space-y-4">
-          <ul className="flex flex-col items-start gap-4">
-            <li>
-              <HashLink smooth to="#home" className="hover:text-blue-400" onClick={toggleMenu}>
-                Home
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#about" className="hover:text-blue-400" onClick={toggleMenu}>
-                About
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#service" className="hover:text-blue-400" onClick={toggleMenu}>
-                Services
-              </HashLink>
-            </li>
-            <li>
-              <HashLink smooth to="#contact" className="hover:text-blue-400" onClick={toggleMenu}>
-                Contact
-              </HashLink>
-            </li>
-          </ul>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-md hover:bg-gray-800 transition-colors"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      )}
+
+        {/* Mobile Navigation Menu */}
+        <div className={`
+          md:hidden transition-all duration-300 ease-in-out
+          ${isMenuOpen 
+            ? 'max-h-96 opacity-100 visible' 
+            : 'max-h-0 opacity-0 invisible'
+          }
+          overflow-hidden
+        `}>
+          <div className="pt-4 pb-2 space-y-2 border-t border-gray-700 mt-2">
+            <Link
+              className="block py-3 px-4 hover:bg-gray-800 hover:text-white rounded-md transition-colors flex items-center gap-2"
+              to="/"
+              onClick={closeMenu}
+            >
+              <Home size={18} /> Home
+            </Link>
+            <Link
+              className="block py-3 px-4 hover:bg-gray-800 hover:text-white rounded-md transition-colors flex items-center gap-2"
+              to="/about"
+              onClick={closeMenu}
+            >
+              <Info size={18} /> About
+            </Link>
+            <Link
+              className="block py-3 px-4 hover:bg-gray-800 hover:text-white rounded-md transition-colors flex items-center gap-2"
+              to="/services"
+              onClick={closeMenu}
+            >
+              <Hammer size={18} /> Services
+            </Link>
+            <Link
+              className="block py-3 px-4 hover:bg-gray-800 hover:text-white rounded-md transition-colors flex items-center gap-2"
+              to="/booking"
+              onClick={closeMenu}
+            >
+              <Calendar size={18} /> Booking
+            </Link>
+            <Link
+              className="block py-3 px-4 hover:bg-gray-800 hover:text-white rounded-md transition-colors flex items-center gap-2"
+              to="/contact"
+              onClick={closeMenu}
+            >
+              <Mail size={18} /> Contact
+            </Link>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

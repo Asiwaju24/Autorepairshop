@@ -1,19 +1,29 @@
-import { useState } from "react";
-import { Button } from "./components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
-import { Input } from "./components/ui/input";
-import { Textarea } from "./components/ui/textarea";
-import { Badge } from "./components/ui/badge";
-import { Mail, Clock, Settings, Home, User } from "lucide-react";
 import React from "react";
-import AutoShopWebsite from "./components/AutoShopWebsite";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Booking from "./pages/Booking";
+import Contact from "./pages/Contact";
 
-export default function AutoShop() {
-  return( 
-  <>
-    <Navbar/>
-    <AutoShopWebsite />
-  </>
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <div className="min-h-[80vh]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
   );
 }
+
+export default App;
