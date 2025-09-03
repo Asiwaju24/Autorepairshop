@@ -1,4 +1,3 @@
-
 import { Zap, Settings } from "lucide-react";
 import React from "react";
 import { HashLink } from "react-router-hash-link";
@@ -7,6 +6,7 @@ import { Clock, User } from "lucide-react";
 import { services } from "../constants/index"; 
 import { Link } from "react-router-dom";
 
+ 
 export default function Home() {
   
 
@@ -38,13 +38,13 @@ export default function Home() {
             Book an Appointment
           </HashLink>
 
-          <HashLink
+          <Link
             smooth
-            to="#service"
+            to="/store"
             className="border border-white px-8 py-4 rounded-lg text-lg text-white hover:bg-white hover:text-gray-900 transition"
           >
-            Our Services
-          </HashLink>
+            Visit Our Car Store
+          </Link>
         </div>
       </div>
 
@@ -66,7 +66,7 @@ export default function Home() {
             About Our Auto Shop
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            With over 20 years of experience, our certified technicians provide
+            With over 5 years of experience, our certified technicians provide
             reliable and affordable auto repair services.
           </p>
           <div className="grid md:grid-cols-3 gap-8">

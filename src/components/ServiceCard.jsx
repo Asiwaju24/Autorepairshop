@@ -33,13 +33,7 @@ export function TireServiceCard() {
         </p>
 
         {/* Price */}
-        <div className="flex items-baseline gap-2 mb-6">
-          <span className="text-4xl font-bold">₦15,000</span>
-          <span className="text-blue-200 line-through">₦18,000</span>
-          <span className="bg-green-400 text-gray-900 text-sm font-medium px-2 py-1 rounded ml-auto">
-            Save 17%
-          </span>
-        </div>
+        
       </div>
 
       {/* Features */}
@@ -119,10 +113,6 @@ export function EngineServiceCard() {
       {/* Content */}
       <div className="p-8">
         {/* Price */}
-        <div className="flex items-baseline gap-2 mb-6">
-          <span className="text-3xl font-bold text-white">₦25,000</span>
-          <span className="text-gray-400 text-sm">complete analysis</span>
-        </div>
 
         {/* Features */}
         <div className="mb-6">
@@ -206,23 +196,7 @@ export function BrakeServiceCard() {
         </div>
 
         {/* Pricing Options */}
-        <div className="mb-6">
-          <h3 className="font-semibold text-gray-800 mb-3">Service Packages:</h3>
-          <div className="space-y-2">
-            <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-              <span className="text-gray-700">Basic Inspection</span>
-              <span className="font-bold text-red-600">₦8,000</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-red-50 border border-red-200 rounded">
-              <span className="text-gray-700">Pad Replacement</span>
-              <span className="font-bold text-red-600">₦15,000</span>
-            </div>
-            <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
-              <span className="text-gray-700">Full System Service</span>
-              <span className="font-bold text-red-600">₦25,000</span>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Safety Features */}
         <div className="mb-6">

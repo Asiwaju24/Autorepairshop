@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import { Link } from "react-router-dom";
-import { Home, Info, Calendar, Mail, Hammer, Menu, X } from "lucide-react";
+import { Home, Info, Calendar, Mail, Hammer, Menu, X, Store } from "lucide-react";
 import Logo from "../assets/logo.jpg";
 import React, { useState } from "react";
 
@@ -21,7 +21,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo/Brand */}
           <div className="text-2xl font-bold flex items-center gap-2">
-            <h1>AR Auto</h1>
+            <img src={Logo} className="w-8 h-4 "/><h2>AR Automotive Technology</h2>
           </div>
 
           {/* Desktop Navigation */}
@@ -40,6 +40,9 @@ export default function Navbar() {
             </Link>
             <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/contact" onClick={closeMenu}>
               <Mail size={18} /> Contact
+            </Link>
+            <Link className="hover:text-yellow-400 flex items-center gap-1 transition-colors" to="/store" onClick={closeMenu}>
+              <Store size={18}/> Car Store  
             </Link>
           </div>
 

@@ -159,123 +159,103 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
             
             <form 
-              onSubmit={handleSubmit}
-              action="https://formspree.io/f/xnnbdkeq"
-              method="POST"
-              className="space-y-6"
-            >
-              {/* Hidden fields for Formspree */}
-              <input type="hidden" name="_subject" value="New Contact Form Submission - AR Auto Repair" />
-              <input type="hidden" name="_template" value="table" />
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <User className="w-4 h-4 inline mr-1" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your full name"
-                  />
-                </div>
+  action="https://formspree.io/f/xnnbdkeq"
+  method="POST"
+  className="space-y-6"
+>
+  {/* Hidden fields for Formspree */}
+  <input type="hidden" name="_subject" value="New Contact Form Submission - AR Auto Repair" />
+  <input type="hidden" name="_template" value="table" />
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Mail className="w-4 h-4 inline mr-1" />
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <User className="w-4 h-4 inline mr-1" />
+        Full Name *
+      </label>
+      <input
+        type="text"
+        name="name"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="Your full name"
+      />
+    </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Phone className="w-4 h-4 inline mr-1" />
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Mail className="w-4 h-4 inline mr-1" />
+        Email Address *
+      </label>
+      <input
+        type="email"
+        name="email"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="your.email@example.com"
+      />
+    </div>
+  </div>
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Car className="w-4 h-4 inline mr-1" />
-                    Subject *
-                  </label>
-                  <select
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select a subject</option>
-                    {subjectOptions.map((option) => (
-                      <option key={option} value={option}>{option}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Phone className="w-4 h-4 inline mr-1" />
+        Phone Number
+      </label>
+      <input
+        type="tel"
+        name="phone"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="+1 (555) 123-4567"
+      />
+    </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  <MessageCircle className="w-4 h-4 inline mr-1" />
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Tell us how we can help you..."
-                />
-              </div>
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Car className="w-4 h-4 inline mr-1" />
+        Subject *
+      </label>
+      <select
+        name="subject"
+        required
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        <option value="">Select a subject</option>
+        {subjectOptions.map((option) => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition duration-200 flex items-center justify-center gap-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
-              </button>
+  <div className="space-y-2">
+    <label className="block text-sm font-medium text-gray-700">
+      <MessageCircle className="w-4 h-4 inline mr-1" />
+      Message *
+    </label>
+    <textarea
+      name="message"
+      rows={5}
+      required
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      placeholder="Tell us how we can help you..."
+    />
+  </div>
 
-              <p className="text-sm text-gray-500 text-center">
-                We typically respond to all messages within 24 hours during business days.
-              </p>
-            </form>
+  <button
+    type="submit"
+    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center gap-2"
+  >
+    <Send className="w-5 h-5" />
+    Send Message
+  </button>
+
+  <p className="text-sm text-gray-500 text-center">
+    We typically respond to all messages within 24 hours during business days.
+  </p>
+</form>
+
           </div>
         </div>
 

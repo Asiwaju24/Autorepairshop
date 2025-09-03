@@ -85,7 +85,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About AR Auto Repair</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">About AR Automotive Technology</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Trusted auto repair services with over years of excellence in keeping your vehicles running smoothly.
           </p>
@@ -170,7 +170,7 @@ export default function About() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Experience Quality Auto Care?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust AR Auto Repair with their vehicles.
+            Join thousands of satisfied customers who trust AR Automotive Technology with their vehicles.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <HashLink

@@ -153,162 +153,143 @@ export default function Booking() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Appointment Details</h2>
             
             <form 
-              onSubmit={handleSubmit}
-              action="https://formspree.io/f/xnnbdkeq" 
-              method="POST"
-              className="space-y-6"
-            >
-              {/* Hidden fields for Formspree customization */}
-              <input type="hidden" name="_subject" value="New Appointment Booking from AR Auto Website" />
-              <input type="hidden" name="_template" value="table" />
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <User className="w-4 h-4 inline mr-1" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="John Doe"
-                  />
-                </div>
+  action="https://formspree.io/f/xnnbdkeq" 
+  method="POST"
+  className="space-y-6"
+>
+  <input type="hidden" name="_subject" value="New Appointment Booking from AR Auto Website" />
+  <input type="hidden" name="_template" value="table" />
+  
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <User className="w-4 h-4 inline mr-1" />
+        Full Name *
+      </label>
+      <input
+        type="text"
+        name="name"
+        required
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="John Doe"
+      />
+    </div>
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Phone className="w-4 h-4 inline mr-1" />
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-              </div>
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Phone className="w-4 h-4 inline mr-1" />
+        Phone Number *
+      </label>
+      <input
+        type="tel"
+        name="phone"
+        required
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        placeholder="+1 (555) 123-4567"
+      />
+    </div>
+  </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                />
-              </div>
+  <div className="space-y-2">
+    <label className="block text-sm font-medium text-gray-700">
+      Email Address *
+    </label>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      placeholder="john@example.com"
+    />
+  </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Car className="w-4 h-4 inline mr-1" />
-                    Vehicle Type *
-                  </label>
-                  <select
-                    name="vehicleType"
-                    required
-                    value={formData.vehicleType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select Vehicle Type</option>
-                    {vehicleTypes.map(type => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
-                </div>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Car className="w-4 h-4 inline mr-1" />
+        Vehicle Type *
+      </label>
+      <select
+        name="vehicleType"
+        required
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        <option value="">Select Vehicle Type</option>
+        {vehicleTypes.map(type => (
+          <option key={type} value={type}>{type}</option>
+        ))}
+      </select>
+    </div>
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    Service Needed *
-                  </label>
-                  <select
-                    name="serviceType"
-                    required
-                    value={formData.serviceType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select Service</option>
-                    {serviceOptions.map(service => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        Service Needed *
+      </label>
+      <select
+        name="serviceType"
+        required
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        <option value="">Select Service</option>
+        {serviceOptions.map(service => (
+          <option key={service} value={service}>{service}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Calendar className="w-4 h-4 inline mr-1" />
-                    Preferred Date *
-                  </label>
-                  <input
-                    type="date"
-                    name="preferredDate"
-                    required
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Calendar className="w-4 h-4 inline mr-1" />
+        Preferred Date *
+      </label>
+      <input
+        type="date"
+        name="preferredDate"
+        required
+        min={new Date().toISOString().split('T')[0]}
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      />
+    </div>
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">
-                    <Clock className="w-4 h-4 inline mr-1" />
-                    Preferred Time *
-                  </label>
-                  <select
-                    name="preferredTime"
-                    required
-                    value={formData.preferredTime}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select Time</option>
-                    {timeSlots.map(time => (
-                      <option key={time} value={time}>{time}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+    <div className="space-y-2">
+      <label className="block text-sm font-medium text-gray-700">
+        <Clock className="w-4 h-4 inline mr-1" />
+        Preferred Time *
+      </label>
+      <select
+        name="preferredTime"
+        required
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      >
+        <option value="">Select Time</option>
+        {timeSlots.map(time => (
+          <option key={time} value={time}>{time}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-              <div className="space-y-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  Additional Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Any specific issues or concerns we should know about?"
-                />
-              </div>
+  <div className="space-y-2">
+    <label className="block text-sm font-medium text-gray-700">
+      Additional Message
+    </label>
+    <textarea
+      name="message"
+      rows={4}
+      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+      placeholder="Any specific issues or concerns we should know about?"
+    />
+  </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition duration-200"
-              >
-                {isSubmitting ? 'Booking...' : 'Book Appointment'}
-              </button>
-            </form>
+  <button
+    type="submit"
+    className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-200"
+  >
+    Book Appointment
+  </button>
+</form>
           </div>
         </div>
       </div>

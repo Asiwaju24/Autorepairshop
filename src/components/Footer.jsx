@@ -26,8 +26,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-                <img src={Logo} className="w-8 h-5" />
-              <h3 className="text-2xl font-bold">AR Auto Repair</h3>
+              <h3 className="text-2xl font-bold">AR Automotive Technology</h3>
             </div>
             <p className="text-gray-300 leading-relaxed">
               Professional auto repair services with over 5 years of experience. 
@@ -117,7 +116,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} AR Auto Repair. All rights reserved.
             </p>
-            <p text-gray-500 text-sm>Designed By Wizard Technology</p>
+            <p text-gray-500 text-sm><a href='https://wizard-7zh9.onrender.com/'>Designed By Wizard Technology</a></p>
             <div className="flex gap-6 text-sm text-gray-400">
               <a href="#" className="hover:text-blue-400 transition">Privacy Policy</a>
               <a href="#" className="hover:text-blue-400 transition">Terms of Service</a>

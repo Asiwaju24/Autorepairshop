@@ -8,7 +8,7 @@ export const services = [
       description:
         "Complete oil and filter change using premium synthetic oil to keep your engine running smoothly.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "9000.99",
+      price: "",
       duration: "30 min",
     },
     {
@@ -17,7 +17,7 @@ export const services = [
       description:
         "Inspection and replacement of brake pads, rotors, and fluid to ensure your safety on the road.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "129000.99+",
+      price: "",
       duration: "1-2 hours",
     },
     {
@@ -26,7 +26,7 @@ export const services = [
       description:
         "Professional battery testing and replacement with top-quality batteries for reliable starts.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "59000",
+      price: "",
       duration: "30 min",
     },
     {
@@ -35,7 +35,7 @@ export const services = [
       description:
         "Advanced computer diagnostics to identify and resolve check engine lights and performance issues.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "8999.99",
+      price: "",
       duration: "1 hour",
     },
     {
@@ -44,7 +44,7 @@ export const services = [
       description:
         "Proper tire rotation to ensure even wear and extend the life of your tires.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "14000.99",
+      price: "",
       duration: "30 min",
     },
     {
@@ -53,7 +53,7 @@ export const services = [
       description:
         "Comprehensive service including spark plugs, filters, fluids, and system checks for optimal performance.",
       icon: <Settings className="h-8 w-8 text-blue-600" />,
-      price: "199000.99+",
+      price: "",
       duration: "2-3 hours",
     },
   ];
